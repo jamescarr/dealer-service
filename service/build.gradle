@@ -1,0 +1,19 @@
+apply plugin: "jetty"
+
+dependencies{
+  compile project(':shared')
+  compile "org.springframework:spring-webmvc:$springVersion"
+  compile "net.sf.ehcache:ehcache-core:2.3.2"
+  compile "org.jboss.resteasy:resteasy-jaxrs:$restEasyVersion"
+  compile "org.jboss.resteasy:jaxrs-api:$restEasyVersion"
+  compile "org.jboss.resteasy:resteasy-spring:$restEasyVersion"
+  compile "org.jboss.resteasy:resteasy-jaxb-provider:$restEasyVersion"
+  compile "org.jboss.resteasy:resteasy-jettison-provider:$restEasyVersion"
+  compile "org.codehaus.jettison:jettison:1.2"
+  		runtime "org.slf4j:jcl-over-slf4j:$slf4jVersion",
+			"org.slf4j:slf4j-log4j12:$slf4jVersion"
+  		compile "org.springframework:spring-core:$springVersion",
+			"org.springframework:spring-context:$springVersion",
+			"cglib:cglib-nodep:2.2"
+}
+

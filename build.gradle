@@ -1,0 +1,32 @@
+apply plugin: 'java'
+restEasyVersion="2.1.0.GA"
+springVersion="3.1.0.M1"
+slf4jVersion="1.6.1"
+
+subprojects {
+	apply plugin:'eclipse'
+
+	group="com.carfax.inventory"
+	version="1.0-SNAPSHOT"
+
+	repositories{
+  		mavenCentral();
+  		mavenRepo urls: ["http://maven.springframework.org/milestone",
+				"https://repository.jboss.org/nexus/content/groups/public/"]
+
+	}
+
+	task "create-dirs" << {
+   		sourceSets.all*.java.srcDirs*.each { it.mkdirs() }
+   		sourceSets.all*.resources.srcDirs*.each { it.mkdirs() }
+	}
+}
+
+
+	dependencies{
+  		runtime "org.slf4j:jcl-over-slf4j:$slf4jVersion",
+			"org.slf4j:slf4j-log4j12:$slf4jVersion"
+  		compile "org.springframework:spring-core:$springVersion",
+			"org.springframework:spring-context:$springVersion",
+			"cglib:cglib-nodep:2.2"
+	}
