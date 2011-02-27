@@ -12,7 +12,8 @@ subprojects {
 	repositories{
   		mavenCentral();
   		mavenRepo urls: ["http://maven.springframework.org/milestone",
-				"https://repository.jboss.org/nexus/content/groups/public/"]
+				"https://repository.jboss.org/nexus/content/groups/public/",
+				"https://github.com/jamescarr/ehcache-amqpreplication/raw/master/snapshots/"]
 
 	}
 

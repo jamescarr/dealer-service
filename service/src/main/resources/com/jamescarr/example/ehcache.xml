@@ -20,6 +20,21 @@
             maxElementsOnDisk="10000000"
             diskPersistent="false"
             diskExpiryThreadIntervalSeconds="120"
-            memoryStoreEvictionPolicy="LRU"/>
+            memoryStoreEvictionPolicy="LRU">
+    <cacheEventListenerFactory class="net.sf.ehcache.amqp.AMQCacheReplicatorFactory"
+                                   properties="replicatePuts=true,
+                                                replicateUpdates=true,
+                                                replicateUpdatesViaCopy=true,
+                                                replicateRemovals=true,
+                                                host=dev.rabbitmq.com"
+                                   propertySeparator=","/>
     
+    </cache>
+
+
+ 	<cacheManagerPeerProviderFactory
+            class="net.sf.ehcache.amqp.AMQCacheManagerPeerProviderFactory"
+            properties="host=dev.rabbitmq.com"
+            propertySeparator=","
+            />   
 </ehcache>

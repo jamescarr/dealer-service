@@ -20,7 +20,7 @@ public class DefaultDealerService implements DealerService {
 	public DefaultDealerService(DealerRepository repository){
 		dealerRepository = repository;
 	}
-	public Dealer getDealer(@PathParam("title") String username){
+	public Dealer getDealer(String username){
 		LOG.info("Service looking up dealer with username " + username);
 		return dealerRepository.getDealer(username);
 	}

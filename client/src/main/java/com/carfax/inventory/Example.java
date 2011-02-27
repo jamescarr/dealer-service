@@ -12,7 +12,7 @@ public class Example {
 		for (Dealer dealer : service.getDealers()) {
 			System.out.println(dealer.getUsername() + " : " + dealer.getDealershipName());
 		}
-		
+		System.out.println("-----");
 		// create a dealer
 		Dealer d = new Dealer("C19029", "Pawal's Cars");
 		service.save(d);
