@@ -3,12 +3,12 @@ package com.carfax.inventory;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+import java.util.*;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class Dealer {
+public class Dealer implements Serializable{
 	@XmlElement 
 	private int id;
 	@XmlElement
